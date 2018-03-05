@@ -1,0 +1,21 @@
+{
+  "name": "marchmadnessbot",
+  "version": "1.0.0",
+  "description": "A bot for something useless",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Kyle Ohanian",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.2",
+    "facebook-chat-api": "git+https://github.com/kohanian/facebook-chat-api.git",
+    "repeat": "0.0.6",
+    "request": "^2.83.0",
+    "string-builder": "^0.1.4"
+  }
+}
