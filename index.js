@@ -37,9 +37,9 @@ login({email: facebook_email, password: facebook_pass}, (err, api) => {
 	});
 
 
-Repeat(joinLink.sendJoinLink).every(180, 'min').provided(function() {
+Repeat(joinLink.sendJoinLink).every(360, 'min').provided(function() {
 	var date = new Date();
 	var hrs = date.getHours();
 	return hrs >= 9 && hrs <= 24;
 
-}).start.in(10, 'sec');
+}).start.in(360, 'min');
