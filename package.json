@@ -4,18 +4,28 @@
   "description": "A bot for something useless",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "babel-node index.js --presets es2015,stage-2"
   },
   "author": "Kyle Ohanian",
   "license": "ISC",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.2",
     "cheerio": "^1.0.0-rc.2",
     "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "facebook-chat-api": "git+https://github.com/kohanian/facebook-chat-api.git",
-    "repeat": "0.0.6",
+    "jquery": "^3.3.1",
+    "node-phantom": "^0.2.5",
+    "node-phantom-simple": "^2.2.4",
+    "node-schedule": "^1.3.0",
+    "phantomjs": "^2.1.7",
     "request": "^2.83.0",
     "string-builder": "^0.1.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1"
   }
 }

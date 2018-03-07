@@ -32,9 +32,7 @@ function getScoreboard(api, group) {
 	    		console.log("Building String")
 	    		api.sendMessage(sb.toString(), group)
 	    	}
-	    	// sb.appendLine(str)
 	    });
-	    // return sb.toString();
 	  }
 	  else {
 	  	return "Error"

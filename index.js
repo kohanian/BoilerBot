@@ -1,13 +1,14 @@
 'use strict'
+require("babel-polyfill");
 const dotenv = require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser');
 const app = express()
-const Repeat = require('repeat')
 
 const joinLink = require("./modules/joinLink.js")
 const leaderboard = require("./modules/leaderboard.js")
 const scoreboard = require("./modules/scoreboard.js")
+const gameUpdates = require("./modules/gameUpdates.js")
 
 const login = require('facebook-chat-api')
 const facebook_email = process.env.BOILER_BOT_EMAIL || "email@gmail.com"
@@ -30,16 +31,16 @@ login({email: facebook_email, password: facebook_pass}, (err, api) => {
 	    	if(message !== undefined && message.body === "/scores") {
 	    		scoreboard.getScoreboard(api, message.threadID)
 	    	}
+	    	else if(message !== undefined && message.body === "/leaderboard") {
+	    		leaderboard.getLeaderboard(api, message.threadID)
+	    	}
 	    	else {
 	    		console.log("Error")
 	    	}
 	    });
+		gameUpdates.getGameUpdates(api)
 	});
 
 
-Repeat(joinLink.sendJoinLink).every(360, 'min').provided(function() {
-	var date = new Date();
-	var hrs = date.getHours();
-	return hrs >= 9 && hrs <= 24;
 
-}).start.in(360, 'min');
+
